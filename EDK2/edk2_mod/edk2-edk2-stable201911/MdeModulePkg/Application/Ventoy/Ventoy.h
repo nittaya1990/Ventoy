@@ -98,7 +98,9 @@ typedef struct ventoy_os_param
     
     UINT64  vtoy_reserved[4];     // Internal use by ventoy
 
-    UINT8   reserved[31];
+    UINT8   vtoy_disk_signature[4];
+
+    UINT8   reserved[27];
 }ventoy_os_param;
 
 #pragma pack()
@@ -242,7 +244,9 @@ typedef int (*grub_env_printf_pf)(const char *fmt, ...);
 
 #pragma pack(1)
 
+#define VTOY_MAX_CONF_REPLACE    2
 #define GRUB_FILE_REPLACE_MAGIC  0x1258BEEF
+#define GRUB_IMG_REPLACE_MAGIC   0x1259BEEF
 
 typedef struct ventoy_efi_file_replace
 {
@@ -267,6 +271,7 @@ typedef struct ventoy_grub_param
     grub_env_get_pf grub_env_get;
     grub_env_set_pf grub_env_set;
     ventoy_grub_param_file_replace file_replace;
+    ventoy_grub_param_file_replace img_replace[VTOY_MAX_CONF_REPLACE];
     grub_env_printf_pf grub_env_printf;    
 }ventoy_grub_param;
 
@@ -396,6 +401,7 @@ extern ventoy_virt_chunk *g_virt_chunk;
 extern UINT32 g_virt_chunk_num;
 extern vtoy_block_data gBlockData;
 extern ventoy_efi_file_replace g_efi_file_replace;
+extern ventoy_efi_file_replace g_img_file_replace[VTOY_MAX_CONF_REPLACE];
 extern ventoy_sector_flag *g_sector_flag;
 extern UINT32 g_sector_flag_num;
 extern BOOLEAN gMemdiskMode;
@@ -403,6 +409,7 @@ extern BOOLEAN gSector512Mode;
 extern UINTN g_iso_buf_size;
 extern UINT8 *g_iso_data_buf;
 extern ventoy_grub_param_file_replace *g_file_replace_list;
+extern ventoy_grub_param_file_replace *g_img_replace_list;
 extern BOOLEAN g_fixup_iso9660_secover_enable;
 extern EFI_SIMPLE_TEXT_INPUT_EX_PROTOCOL *g_con_simple_input_ex;
 extern BOOLEAN g_fix_windows_1st_cdrom_issue;

@@ -81,6 +81,24 @@
     <ClCompile Include="VentoyJson.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DiskService_diskpart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DiskService_vds.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DiskService_wmsa.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DiskService.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="YesDialog.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AlertSuppress.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ventoy2Disk.h">
@@ -143,6 +161,9 @@
     <ClInclude Include="VentoyJson.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DiskService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Ventoy2Disk.rc">
@@ -160,6 +181,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="Res\secure.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Res\secure2.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

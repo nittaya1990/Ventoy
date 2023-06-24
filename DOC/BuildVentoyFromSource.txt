@@ -1,8 +1,8 @@
 
 ==========================================
-1. Compile Enviroment
+1. Compile Environment
 ==========================================
-    My build envrioment is CentOS 7.8 x86_64. So here I first explain how to create the build environment from scratch.
+    My build environment is CentOS 7.8 x86_64. So here I first explain how to create the build environment from scratch.
     Because Ventoy is based on many open source projects, so the environment is important. I suggest you test it on a virtual machine firstly.
 
 1.1 Install CentOS 7.8
@@ -34,7 +34,7 @@
     https://codeload.github.com/libfuse/libfuse/zip/fuse-2.9.9           ===>  /home/Ventoy-master/ExFAT/libfuse-fuse-2.9.9.zip
     https://releases.linaro.org/components/toolchain/binaries/7.4-2019.02/aarch64-linux-gnu/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu.tar.xz           ===>  /opt/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu.tar.xz
     https://toolchains.bootlin.com/downloads/releases/toolchains/aarch64/tarballs/aarch64--uclibc--stable-2020.08-1.tar.bz2 ===> /opt/aarch64--uclibc--stable-2020.08-1.tar.bz2
-    http://ftp.loongnix.org/toolchain/gcc/release/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz ===> /opt/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz
+    http://ftp.loongnix.cn/toolchain/gcc/release/mips/gcc7/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz ===> /opt/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz    
     https://github.com/ventoy/musl-cross-make/releases/download/latest/output.tar.bz2 ===> /opt/output.tar.bz2
 
 
@@ -54,7 +54,7 @@
     mv /opt/output /opt/mips64el-linux-musl-gcc730
     
 
-2.4 Set PATH envrioment
+2.4 Set PATH environment
     export PATH=$PATH:/opt/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/bin:/opt/aarch64--uclibc--stable-2020.08-1/bin:/opt/mips64el-linux-musl-gcc730/bin
     better to add this line to /root/.bashrc and relogin as root
 
@@ -108,10 +108,10 @@
     cd /home/Ventoy-master/VtoyTool
     sh build.sh
 
-4.8 == Build vtoyfat ==    
-    cd /home/Ventoy-master/vtoyfat/fat_io_lib
+4.8 == Build vtoycli ==    
+    cd /home/Ventoy-master/vtoycli/fat_io_lib
     sh buildlib.sh
-    cd /home/Ventoy-master/vtoyfat
+    cd /home/Ventoy-master/vtoycli
     sh build.sh
 
 4.9 == Build exfat-util ==
